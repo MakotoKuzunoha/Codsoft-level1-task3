@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #091921;
+}
+.calculator
+{
+    position: relative;
+    display: grid;
+}
+.block{
+    position: relative;
+    margin: 10% auto 0;
+    width: 23.45%;
+    height: 10%;
+    background: linear-gradient(0deg , black ,rgb(44,43,43));
+}
+.calculator .value
+{
+    grid-column: span 4;
+    height: 100px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 18px;
+}
+.calculator span
+{
+    display: grid;
+    width:  90px;
+    height: 90px;
+    color: #fff;
+    background: #0c2835;
+    place-items: center;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+.calculator span:active
+{
+    background: #74ff3b;
+    color: #111;
+}
+.calculator span.clear
+{
+    grid-column: span 2;
+    width: 180px;
+    background: #ff3077;
+}
+.calculator span.plus
+{
+    grid-row: span 2;
+    height: 180px;
+}
+.calculator span.equal
+{
+    background: #03b1ff;
+}
+.glow::before, .glow::after{
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg , #e6fb04 ,#ff6600 , #00ff66 , #001efff2 , #11ef05 , #3d112c , #6e0dd081 , #ff3300 , #099fff);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+.glow::after{
+    filter: blur(40px);
+}
